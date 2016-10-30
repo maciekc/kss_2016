@@ -1,0 +1,23 @@
+.main-chart {
+    height: 400px;
+    width: 80%;
+    margin-left: 10%;
+}
+
+.building-chart {
+    height: 400px;
+    width: 80%;
+    margin-left: 10%;
+}
+
+.stream-chart {
+    height: 400px;
+    width: 80%;
+    margin-left: 10%;
+}
+
+.main-banner{
+    margin-top: 10px;
+    text-align: center;
+    font-size: 1.6em;
+}

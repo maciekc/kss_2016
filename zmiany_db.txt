@@ -1,0 +1,9 @@
+https://docs.djangoproject.com/en/1.10/intro/tutorial02/
+
+python manage.py migrate
+
+python manage.py makemigrations /nazwa_aplikacji/
+
+python manage.py sqlmigrate /nazwa_aplikacji/ /kolejny_numer/ 000n
+
+python manage.py migrate
