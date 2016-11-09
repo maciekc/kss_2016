@@ -3,7 +3,6 @@
  */
 
 'use strict';
-
 var buildingDivAppend = d3.select('#building-chart')
     .append('div')
     .attr('class','building-chart');

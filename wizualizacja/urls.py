@@ -5,4 +5,5 @@ from . import views
 urlpatterns = [
     #url(r'^$', views.index, name='index'),
     url(r'^$', views.update_data, name='up_data'),
+    url(r'raport/$', views.generate_PDF, name='raport_PDF'),
 ]
