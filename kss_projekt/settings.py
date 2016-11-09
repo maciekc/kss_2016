@@ -55,9 +55,12 @@ ROOT_URLCONF = 'kss_projekt.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['D:/studia/IV_rok/KSS/kss/kss_projekt/template',
-                 'D:/studia/IV_rok/KSS/kss/kss_projekt/static/js',
-                 'D:/studia/IV_rok/KSS/kss/kss_projekt/static/css',
+        # 'DIRS': ['D:/studia/IV_rok/KSS/kss/kss_projekt/template',
+        #          'D:/studia/IV_rok/KSS/kss/kss_projekt/static/js',
+        #          'D:/studia/IV_rok/KSS/kss/kss_projekt/static/css',
+        #          ],
+        'DIRS': [os.path.join(BASE_DIR, "static"),
+                 os.path.join(BASE_DIR, "template"),
                  ],
         'APP_DIRS': True,
         'OPTIONS': {
