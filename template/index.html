@@ -1,8 +1,11 @@
 <html>
 <head>
-	<meta http-equiv="refresh" content="20"/>
+{#	<meta http-equiv="refresh" content="20"/>#}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+{#     <a href="{% r'^wizualizacja/raport/' %}" target="_blank"> Raport PDF </a> #}
+    
     <title>Wizualizacja systemu modelowania i sterowania instalacja CO</title>
     {% load static %}
     <link href="{% static "css/style.css"%}" rel="stylesheet" type="text/css">
@@ -15,6 +18,11 @@
         <h2 class="main-banner">Wizualizacja</h2>
     </div>
 </div>
+
+<div>
+	<button id = "but_r">raport</button>
+	
+</div>
 <div class="row">
     <div id="main-chart" class="col-lg-6 col-xs-12"></div>
     <div id="stream-chart" class="col-lg-6 col-xs-12"></div>
@@ -22,18 +30,29 @@
 </div>
 </body>
 <script src="https://cdnjs.com/libraries/chart.js"></script>
-
+<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
 {#tu nalezy dodac wszystkie zmienne ktore wykorzystane sa do rysowania wykresow w plikach js#}
+{#<script>#}
+{#	var date = 	{{date|safe}};#}
+{#	var Tzm1 = 	{{Tzm}};#}
+{#	var Tpm1 = 	{{Tpm}};#}
+{#	var Tzco1 = {{Tzco}};#}
+{#	var Tpco1 = {{Tpco}};#}
+{#	var Tr1 = 	{{Tr}};#}
+{#	var Th1 = 	{{Th}};#}
+
+{#</script>#}
 <script>
-	var date = 	{{date|safe}};
-	var Tzm1 = 	{{Tzm}};
-	var Tpm1 = 	{{Tpm}};
-	var Tzco1 = {{Tzco}};
-	var Tpco1 = {{Tpco}};
-	var Tr1 = 	{{Tr}};
-	var Th1 = 	{{Th}};
+	var date;
+	var Tzm;
+	var Tpm;
+	var Tzco1;
+	var Tpco1;
+	var Tr1;
+	var Th1;
 
 </script>
+
 
 {% load static %}
 <script type="text/javascript" src="{% static "js/plotly-latest.min.js" %}"></script>
@@ -45,5 +64,7 @@
 <script type="text/javascript" src="{% static "js/plot-building-data.js" %}"></script>
 {% load static %}
 <script type="text/javascript" src="{% static "js/generate-chart.js" %}"></script>
+{% load static %}
+<script type="text/javascript" src="{% static "js/generate_pdf.js" %}"></script>
     
 </html>

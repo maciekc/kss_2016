@@ -1,8 +1,10 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from models import Measurement
 import json
 from django.template.defaultfilters import last
+from datetime import timedelta, datetime, date
+from django.core import serializers
 
 # Create your views here.
 def index(request):
@@ -83,4 +85,30 @@ def update_data(request):
             #return HttpResponse(str(update_data.Tzm) + str(update_data.Tpm) + str(update_data.Tzco) + str(update_data.Tpco))
         #else:
             #return HttpResponse("nic nowego\n")
-        return render(request,'index.html', update_data.data_to_plot)
+        #return render(request,'index.html', (update_data.data_to_plot))
+        return JsonResponse(update_data.data_to_plot)
+    
+    
+def generate_PDF(request):
+    if request.method == 'GET':
+        okres = request.GET['okres']
+        date_last = Measurement.objects.last().date
+        if okres == 'tydzien':
+            #week = timedelta(days = 7)
+            week = timedelta(hours = 10)
+            new_date = date_last - week
+            y = new_date.year
+            m = new_date.month
+            d = new_date.day
+            data = Measurement.objects.filter(date__range = (new_date,date_last))
+            #data = Measurement.objects.all()
+        with open('dane.xml', 'w') as out:
+            serializers.serialize("xml", data, stream = out)
+        
+        return HttpResponse("dane zapisane do pliku")
+    return HttpResponse("blad !!!")
+            
+            
+        
+        
+    
