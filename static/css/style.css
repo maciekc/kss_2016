@@ -1,3 +1,7 @@
+body {
+    overflow-x: hidden;
+}
+
 .main-chart {
     height: 400px;
     width: 80%;
@@ -16,8 +20,71 @@
     margin-left: 10%;
 }
 
-.main-banner{
+.outside-chart {
+    height: 400px;
+    width: 80%;
+    margin-left: 10%;
+}
+
+.main-banner {
     margin-top: 10px;
     text-align: center;
     font-size: 1.6em;
+}
+
+#but_r {
+    background-color: darkblue;
+    color: white;
+    padding: 30px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+#but_r:hover, #but_r:focus {
+    background-color: blue;
+}
+
+/*.val-row {*/
+    /*margin-left: 20px !important;*/
+/*}*/
+
+/*.val-row .col-xs-8 {*/
+    /*padding-right: 0px !important;*/
+/*}*/
+
+.numval-parent div {
+    text-align: center;
+}
+
+.numval-parent {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.led {
+  margin: 0 auto;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.led-red-on {
+  background-color: #F00;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #441313 0 -1px 9px, rgba(255, 0, 0, 0.5) 0 2px 12px;
+}
+
+.led-red-off {
+  background-color: #A00;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #441313 0 -1px 9px, rgba(255, 0, 0, 0.5) 0 2px 0;
+}
+
+.led-blue-on {
+  background-color: #24E0FF;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #006 0 -1px 9px, #3F8CFF 0 2px 14px;
+}
+
+.led-blue-off {
+  background-color: #0000AA;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #006 0 -1px 9px, #3F8CFF 0 2px 0;
 }

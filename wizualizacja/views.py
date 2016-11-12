@@ -8,9 +8,9 @@ from django.core import serializers
 
 # Create your views here.
 def index(request):
-    return HttpResponse("to ja maciek\n")
+    return render(request,'index.html', {})
 
-def update_data(request):
+def update_data(request, buildingNo, timeUnit):
     request.session.set_expiry(0)
     if request.method == "GET":
         pres_number = Measurement.objects.count() #aktualna liczba pomairow w bazie
@@ -21,6 +21,7 @@ def update_data(request):
             update_data.Tpco = []
             update_data.Tr = []
             update_data.Th = []
+            update_data.To = []
             
             update_data.date = []
             update_data.data_to_plot = {}
@@ -35,6 +36,7 @@ def update_data(request):
             update_data.Tpco = []
             update_data.Tr = []
             update_data.Th = []
+            update_data.To = []
             update_data.date = []
             
             update_data.data_to_plot = {} # dane do prezentacji
@@ -66,6 +68,7 @@ def update_data(request):
                     del(update_data.Tpco[:q])
                     del(update_data.Tr[:q])
                     del(update_data.Th[:q])
+                    del(update_data.To[:q])
                     
                     del(update_data.date[:q])
                 
@@ -75,11 +78,12 @@ def update_data(request):
                 (update_data.Tpco).append(int(temp['Tpco']))
                 (update_data.Tr).append(int(temp['Tr']))
                 (update_data.Th).append(int(temp['Th']))
+                (update_data.To).append(int(temp['To']))
                 (update_data.date).append((temp['date']).strftime('%Y-%m-%d %H:%M:%S'))    
 
                 
 #                 date_encoded = json.dumps(update_data.date)
-                update_data.data_to_plot = {'Tzm':update_data.Tzm,'Tpm':update_data.Tpm,'Tzco':update_data.Tzco,'Tpco':update_data.Tpco, 'Th':update_data.Th, 'Tr':update_data.Tr, 'date':update_data.date}                                                        
+                update_data.data_to_plot = {'Tzm':update_data.Tzm,'Tpm':update_data.Tpm,'Tzco':update_data.Tzco,'Tpco':update_data.Tpco, 'Th':update_data.Th, 'Tr':update_data.Tr, 'To':update_data.To, 'date':update_data.date}
                     
             #return render(request,'index.html', data_to_plot)
             #return HttpResponse(str(update_data.Tzm) + str(update_data.Tpm) + str(update_data.Tzco) + str(update_data.Tpco))
@@ -87,7 +91,9 @@ def update_data(request):
             #return HttpResponse("nic nowego\n")
         #return render(request,'index.html', (update_data.data_to_plot))
         return JsonResponse(update_data.data_to_plot)
-    
+
+def update_building(request, buildingNo, timeUnit):
+    return render(request,'index.html', {})
     
 def generate_PDF(request):
     if request.method == 'GET':

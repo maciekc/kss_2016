@@ -11,4 +11,5 @@ class Measurement(models.Model):
     Tpco = models.IntegerField(default = 0) # temp wody po powrocie z budynkow
     Th = models.IntegerField(default = 0)   # Temperatura kaloryferow
     Tr = models.IntegerField(default = 0)   # Temperatura budynku
+    To = models.IntegerField(default = 0)   # Temperatura na zewnatrz
     date = models.DateTimeField('data pomiaru',default = datetime.now())
