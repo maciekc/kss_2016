@@ -6,6 +6,7 @@
 
 var d3 = Plotly.d3;
 var timeUnit = 'week';
+var timeUnitR = 'day';
 var buildingNo = '1';
 var numData = {
         Tzm: 0,

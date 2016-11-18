@@ -8,6 +8,13 @@ function openTimeDropdown() {
     document.getElementById("timeUnits").classList.toggle("show");
 }
 
+function day() {
+    if(timeUnit != 'day') {
+        timeUnit = 'day';
+        generateAllCharts();
+    }
+}
+
 function week() {
     if(timeUnit != 'week') {
         timeUnit = 'week';

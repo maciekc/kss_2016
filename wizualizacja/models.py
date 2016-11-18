@@ -9,7 +9,14 @@ class Measurement(models.Model):
     Tpm = models.IntegerField(default = 0)  # temp wody powrotnej
     Tzco = models.IntegerField(default = 0) # temp wody wyplywajacej z wymiennika do budynkow
     Tpco = models.IntegerField(default = 0) # temp wody po powrocie z budynkow
-    Th = models.IntegerField(default = 0)   # Temperatura kaloryferow
-    Tr = models.IntegerField(default = 0)   # Temperatura budynku
+    #------------------------------------------------
+    #budynek nr 1
+    Th1 = models.IntegerField(default = 0)   # Temperatura kaloryferow
+    Tr1 = models.IntegerField(default = 0)   # Temperatura budynku
+    #----------------------------------------------------
+    #budynek nr 2
+    Th2 = models.IntegerField(default = 0)   # Temperatura kaloryferow
+    Tr2 = models.IntegerField(default = 0)   # Temperatura budynku
+    
     To = models.IntegerField(default = 0)   # Temperatura na zewnatrz
     date = models.DateTimeField('data pomiaru',default = datetime.now())
