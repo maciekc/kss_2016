@@ -38,27 +38,6 @@ body {
     font-size: 1.6em;
 }
 
-#but_r {
-    background-color: darkblue;
-    color: white;
-    padding: 30px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-}
-
-#but_r:hover, #but_r:focus {
-    background-color: blue;
-}
-
-/*.val-row {*/
-    /*margin-left: 20px !important;*/
-/*}*/
-
-/*.val-row .col-xs-8 {*/
-    /*padding-right: 0px !important;*/
-/*}*/
-
 .numval-parent div {
     text-align: center;
 }
