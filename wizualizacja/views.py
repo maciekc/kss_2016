@@ -7,6 +7,8 @@ from datetime import timedelta, datetime, date
 from django.core import serializers
 from generate_Report import generateReport
 
+dateOfBeginning = datetime
+
 # Create your views here.
 def index(request):
     return render(request,'index.html', {})
@@ -23,6 +25,7 @@ def update_data(request, buildingNo, timeUnit):
         Tr = []
         Th = []
         To = []
+        Fzm = []
         date = []
             
             
@@ -37,21 +40,40 @@ def update_data(request, buildingNo, timeUnit):
         if diff > 0 or update_data.building_no != buildingNo:
             update_data.building_no = buildingNo
             temp_Tr = 'Tr' + str(buildingNo)
-            temp_Th = 'Th' + str(buildingNo)
+            temp_Th = 'Tpco' + str(buildingNo)
             date_last = Measurement.objects.last().date
+            # if timeUnit =='day':
+            #     time = timedelta(days = 1)
+            # elif timeUnit == 'week':
+            #     time = timedelta(days = 7)
+            # elif timeUnit == 'month':
+            #     time = timedelta(days =30)
             if timeUnit =='day':
-                time = timedelta(days = 1)
+                time = 86400
             elif timeUnit == 'week':
-                time = timedelta(days = 7)
+                time = 7*86400
             elif timeUnit == 'month':
-                time = timedelta(days =30)
+                time = 30*86400
 
             new_date = date_last - time
             if Measurement.objects.first().date <= new_date: 
-                data = Measurement.objects.filter(date__range = (new_date,date_last)).values()
+                dataTemp = Measurement.objects.filter(date__range = (new_date,date_last)).values()
             else:
-                data = Measurement.objects.all().values()
-            size = len(data)
+                dataTemp = Measurement.objects.all().values()
+
+            size = len(dataTemp)
+
+            if timeUnit =='day':
+                divider = 100
+            elif timeUnit == 'week':
+                divider = 700
+            elif timeUnit == 'month':
+                divider = 3000
+
+            data = []
+            for i in range(0,divider,size-1):
+                data[i/divider] = dateOfBeginning + timedelta(seconds = dataTemp[divider])
+
             for i in range(size):
                 temp = data[i]
                 (Tzm).append(int(temp['Tzm']))
@@ -60,11 +82,12 @@ def update_data(request, buildingNo, timeUnit):
                 (Tpco).append(int(temp['Tpco']))
                 (Tr).append(int(temp[temp_Tr]))
                 (Th).append(int(temp[temp_Th]))
+                (Fzm).append(int(temp['Fzm']))
                 (To).append(int(temp['To']))
                 (date).append((temp['date']).strftime('%Y-%m-%d %H:%M:%S'))    
 
 
-            update_data.data_to_plot = {'Tzm':Tzm,'Tpm':Tpm,'Tzco':Tzco,'Tpco':Tpco, 'Th':Th, 'Tr':Tr, 'To':To, 'date':date}
+            update_data.data_to_plot = {'Fzm':Fzm,'Tzm':Tzm,'Tpm':Tpm,'Tzco':Tzco,'Tpco':Tpco, 'Th':Th, 'Tr':Tr, 'To':To, 'date':date}
              
         return JsonResponse(update_data.data_to_plot)
 

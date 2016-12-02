@@ -5,22 +5,23 @@ from datetime import datetime
 # Create your models here.
 
 class Measurement(models.Model):
-    Tzm = models.IntegerField(default = 0)  # temp wody z elektrocieplowni
-    Tpm = models.IntegerField(default = 0)  # temp wody powrotnej
-    Tzco = models.IntegerField(default = 0) # temp wody wyplywajacej z wymiennika do budynkow
-    Tpco = models.IntegerField(default = 0) # temp wody po powrocie z budynkow
+    Tzm = models.FloatField(default = 0)  # temp wody z elektrocieplowni
+    Tpm = models.FloatField(default = 0)  # temp wody powrotnej
+    Tzco = models.FloatField(default = 0) # temp wody wyplywajacej z wymiennika do budynkow
+    Tpco = models.FloatField(default = 0) # temp wody po powrocie z budynkow
+    Fzm = models.FloatField(default = 0) # strumien wody wyplywajacej z glownego zaworu
     #------------------------------------------------
     #budynek nr 1
-    Th1 = models.IntegerField(default = 0)   # Temperatura kaloryferow
-    Tr1 = models.IntegerField(default = 0)   # Temperatura budynku
+    Tpco1 = models.FloatField(default = 0)   # Temperatura kaloryferow
+    Tr1 = models.FloatField(default = 0)   # Temperatura budynku
     #----------------------------------------------------
     #budynek nr 2
-    Th2 = models.IntegerField(default = 0)   # Temperatura kaloryferow
-    Tr2 = models.IntegerField(default = 0)   # Temperatura budynku
+    Tpco2 = models.FloatField(default = 0)   # Temperatura kaloryferow
+    Tr2 = models.FloatField(default = 0)   # Temperatura budynku
     #----------------------------------------------------
     #budynek nr 3
-    Th3 = models.IntegerField(default = 0)   # Temperatura kaloryferow
-    Tr3 = models.IntegerField(default = 0)   # Temperatura budynku
+    Tpco3 = models.FloatField(default = 0)   # Temperatura kaloryferow
+    Tr3 = models.FloatField(default = 0)   # Temperatura budynku
     
-    To = models.IntegerField(default = 0)   # Temperatura na zewnatrz
-    date = models.DateTimeField('data pomiaru',default = datetime.now())
+    To = models.FloatField(default = 0)   # Temperatura na zewnatrz
+    date = models.IntegerField('data pomiaru', primary_key=True ,default = 0)

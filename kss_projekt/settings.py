@@ -83,16 +83,16 @@ WSGI_APPLICATION = 'kss_projekt.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME':  'kss_baza',
-        'USER': 'root',
-        'PASSWORD': '',
-        'HOST': 'localhost',
+        # 'NAME':  'kss_baza',
+        # 'USER': 'root',
+        # 'PASSWORD': '',
+        # 'HOST': 'localhost',
+        # 'PORT': '3306',
+        'NAME': 'luki_testing',
+        'USER': 'luki',
+        'PASSWORD': 'luki',
+        'HOST': '192.168.43.198',
         'PORT': '3306',
-        # 'NAME': 'luki_testing',
-        # 'USER': 'luki',
-        # 'PASSWORD': 'luki',
-        # 'HOST': '192.168.43.198',
-        # 'PORT': '10000',
     }
 }
 

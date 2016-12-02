@@ -6,6 +6,7 @@
 var generateAllCharts = function () {
     d3.json('/wizualizacja/wiz/'+buildingNo+'/'+timeUnit+'/', function(SQLdata) {
         // var SQLdata = JSON.parse('{{ SQLdata|escapejs }}');
+        console.log(SQLdata);
         mainChartDiv.data[0].x = SQLdata.date;
         mainChartDiv.data[1].x = SQLdata.date;
         mainChartDiv.data[2].x = SQLdata.date;
@@ -26,7 +27,7 @@ var generateAllCharts = function () {
         numData.Tp = SQLdata.Tpm[SQLdata.Tpm.length-1];
         numData.Tzco = SQLdata.Tzco[SQLdata.Tzco.length-1];
         numData.Tpco = SQLdata.Tpco[SQLdata.Tpco.length-1];
-        //numData.Fzm = SQLdata.Fzm[SQLdata.Fzm.length-1];
+        numData.Fzm = SQLdata.Fzm[SQLdata.Fzm.length-1];
         numData.Th = SQLdata.Th[SQLdata.Th.length-1];
         numData.Tr = SQLdata.Tr[SQLdata.Tr.length-1];
         numData.To = SQLdata.To[SQLdata.To.length-1];
@@ -44,7 +45,7 @@ generateStreamChart();
 generateBuildingChart();
 generateOutsideChart();
 
-setInterval(generateAllCharts, 3000);
+setInterval(generateAllCharts, 6000);
 
 window.onresize = function() {
     Plotly.Plots.resize(mainChartDiv);

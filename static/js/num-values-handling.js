@@ -5,7 +5,7 @@
 'use strict';
 
 var d3 = Plotly.d3;
-var timeUnit = 'week';
+var timeUnit = 'day';
 var timeUnitR = 'day';
 var buildingNo = '1';
 var numData = {
