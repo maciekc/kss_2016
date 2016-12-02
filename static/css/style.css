@@ -1,5 +1,11 @@
 body {
     overflow-x: hidden;
+    background-color: #f7f7f7 !important;
+}
+
+.chart-col {
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .main-chart {
@@ -32,27 +38,6 @@ body {
     font-size: 1.6em;
 }
 
-#but_r {
-    background-color: darkblue;
-    color: white;
-    padding: 30px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-}
-
-#but_r:hover, #but_r:focus {
-    background-color: blue;
-}
-
-/*.val-row {*/
-    /*margin-left: 20px !important;*/
-/*}*/
-
-/*.val-row .col-xs-8 {*/
-    /*padding-right: 0px !important;*/
-/*}*/
-
 .numval-parent div {
     text-align: center;
 }
@@ -60,6 +45,10 @@ body {
 .numval-parent {
     padding-top: 10px;
     padding-bottom: 10px;
+}
+
+.parents-parent {
+    background-color: #f1f1f1;
 }
 
 .led {
@@ -87,4 +76,9 @@ body {
 .led-blue-off {
   background-color: #0000AA;
   box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #006 0 -1px 9px, #3F8CFF 0 2px 0;
+}
+
+#building-dropdown, #time-choice, #report-button {
+    padding-top: 10px;
+    padding-bottom: 10px;
 }

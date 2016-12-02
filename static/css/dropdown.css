@@ -2,7 +2,10 @@
 .dropbtn {
     background-color: darkblue;
     color: white;
-    padding: 30px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    width: 115%;
+    height: calc(40px + 3rem);
     font-size: 16px;
     border: none;
     cursor: pointer;

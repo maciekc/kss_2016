@@ -6,7 +6,7 @@
     
 {#     <a href="{% r'^wizualizacja/raport/' %}" target="_blank"> Raport PDF </a> #}
     
-    <title>Wizualizacja systemu modelowania i sterowania instalacja CO</title>
+    <title>Wizualizacja systemu modelowania i sterowania instalacją CO</title>
 
     {% load static %}
     <link href="{% static "css/style.css" %}" rel="stylesheet" type="text/css">
@@ -19,23 +19,33 @@
 	
     <div class="row">
         <div class="col-xs-12">
-            <h2 class="main-banner">Wizualizacja</h2>
+            <h2 class="main-banner">Wizualizacja systemu modelowania i sterowania instalacją CO</h2>
         </div>
     </div>
 
-    <div class="row">
-        <div id="tzm-numval" class="col-xs-12 col-sm-4 col-md-2 col-lg-1 numval-parent">
-            <div>T<sub>zm</sub> [&deg;C]</div>
+    <div class="row parents-parent">
+        <div id="fzm-numval" class="col-xs-12 col-sm-4 col-md-2 col-lg-1 numval-parent">
+            <div title="Strumień wody opuszczający główny zawór">F<sub>zm</sub> [<sup>t</sup>&frasl;<sub>h</sub>]</div>
             <div class="led-box">
-                <div class="led led-red-off"></div>
+                <div class="led"></div>
             </div>
             <div class="numval">0</div>
             <div class="led-box">
-                <div class="led led-blue-off"></div>
+                <div class="led"></div>
             </div>
         </div>
-        <div id="tpm-numval" class="col-xs-12 col-sm-4 col-md-2 col-lg-1 numval-parent">
-            <div>T<sub>pm</sub> [&deg;C]</div>
+        <div id="to-numval" class="col-xs-12 col-sm-4 col-md-2 col-lg-1 numval-parent">
+            <div title="Temperatura powietrza na zewnątrz">T<sub>o</sub> [&deg;C]</div>
+            <div class="led-box">
+                <div class="led"></div>
+            </div>
+            <div class="numval">0</div>
+            <div class="led-box">
+                <div class="led"></div>
+            </div>
+        </div>
+        <div id="tzm-numval" class="col-xs-12 col-sm-4 col-md-2 col-lg-1 numval-parent">
+            <div title="Temperatura wody przypływającej z elektrociepłowni">T<sub>zm</sub> [&deg;C]</div>
             <div class="led-box">
                 <div class="led led-red-off"></div>
             </div>
@@ -45,37 +55,7 @@
             </div>
         </div>
         <div id="tzco-numval" class="col-xs-12 col-sm-4 col-md-2 col-lg-1 numval-parent">
-            <div>T<sub>zco</sub> [&deg;C]</div>
-            <div class="led-box">
-                <div class="led led-red-off"></div>
-            </div>
-            <div class="numval">0</div>
-            <div class="led-box">
-                <div class="led led-blue-off"></div>
-            </div>
-        </div>
-        <div id="tpco-numval" class="col-xs-12 col-sm-4 col-md-2 col-lg-1 numval-parent">
-                <div>T<sub>pco</sub> [&deg;C]</div>
-                <div class="led-box">
-                    <div class="led led-red-off"></div>
-                </div>
-                <div class="numval">0</div>
-                <div class="led-box">
-                    <div class="led led-blue-off"></div>
-                </div>
-        </div>
-        <div id="fzm-numval" class="col-xs-12 col-sm-4 col-md-2 col-lg-1 numval-parent">
-            <div>F<sub>zm</sub> [<sup>t</sup>&frasl;<sub>h</sub>]</div>
-            <div class="led-box">
-                <div class="led led-red-off"></div>
-            </div>
-            <div class="numval">0</div>
-            <div class="led-box">
-                <div class="led led-blue-off"></div>
-            </div>
-        </div>
-        <div id="tr-numval" class="col-xs-12 col-sm-4 col-md-2 col-lg-1 numval-parent">
-            <div>T<sub>r</sub> [&deg;C]</div>
+            <div title="Temperatura wody wypływającej z wymiennika ciepła">T<sub>zco</sub> [&deg;C]</div>
             <div class="led-box">
                 <div class="led led-red-off"></div>
             </div>
@@ -85,7 +65,7 @@
             </div>
         </div>
         <div id="th-numval" class="col-xs-12 col-sm-4 col-md-2 col-lg-1 numval-parent">
-            <div>T<sub>h</sub> [&deg;C]</div>
+            <div title="Temperatura kaloryferów w budynku">T<sub>h</sub> [&deg;C]</div>
             <div class="led-box">
                 <div class="led led-red-off"></div>
             </div>
@@ -94,14 +74,34 @@
                 <div class="led led-blue-off"></div>
             </div>
         </div>
-        <div id="to-numval" class="col-xs-12 col-sm-4 col-md-2 col-lg-1 numval-parent">
-            <div>T<sub>o</sub> [&deg;C]</div>
+        <div id="tr-numval" class="col-xs-12 col-sm-4 col-md-2 col-lg-1 numval-parent">
+            <div title="Temperatura powietrza wewnątrz budynku">T<sub>r</sub> [&deg;C]</div>
             <div class="led-box">
-                <div class="led led-red-off"></div>
+                <div class="led"></div>
             </div>
             <div class="numval">0</div>
             <div class="led-box">
-                <div class="led led-blue-off"></div>
+                <div class="led"></div>
+            </div>
+        </div>
+        <div id="tpco-numval" class="col-xs-12 col-sm-4 col-md-2 col-lg-1 numval-parent">
+            <div title="Temperatura wody wracającej do wymiennika ciepła">T<sub>pco</sub> [&deg;C]</div>
+                <div class="led-box">
+                    <div class="led"></div>
+                </div>
+                <div class="numval">0</div>
+                <div class="led-box">
+                    <div class="led"></div>
+                </div>
+            </div>
+        <div id="tpm-numval" class="col-xs-12 col-sm-4 col-md-2 col-lg-1 numval-parent">
+            <div title="Temperatura wody wracającej do elektrociepłowni">T<sub>pm</sub> [&deg;C]</div>
+            <div class="led-box">
+                <div class="led"></div>
+            </div>
+            <div class="numval">0</div>
+            <div class="led-box">
+                <div class="led"></div>
             </div>
         </div>
         <div id="report-button" class="col-xs-12 col-sm-4 col-md-2 col-lg-1">
@@ -118,6 +118,7 @@
             <div id="buildings" class="dropdown-content">
                 <div onclick="buildingOne()">Budynek B1</div>
                 <div onclick="buildingTwo()">Budynek B2</div>
+                <div onclick="buildingThree()">Budynek B3</div>
             </div>
         </div>
         <div id="time-choice" class="col-xs-12 col-sm-4 col-md-2 col-lg-1">
@@ -130,15 +131,11 @@
         </div>
     </div>
 
-    <div>
-
-    </div>
-
     <div class="row">
-        <div id="main-chart" class="col-lg-6 col-xs-12"></div>
-        <div id="stream-chart" class="col-lg-6 col-xs-12"></div>
-        <div id="building-chart" class="col-lg-6 col-xs-12"></div>
-        <div id="outside-chart" class="col-lg-6 col-xs-12"></div>
+        <div id="main-chart" class="col-lg-6 col-xs-12 chart-col"></div>
+        <div id="stream-chart" class="col-lg-6 col-xs-12 chart-col"></div>
+        <div id="building-chart" class="col-lg-6 col-xs-12 chart-col"></div>
+        <div id="outside-chart" class="col-lg-6 col-xs-12 chart-col"></div>
     </div>
 
 </body>

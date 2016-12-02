@@ -17,6 +17,10 @@ class Measurement(models.Model):
     #budynek nr 2
     Th2 = models.IntegerField(default = 0)   # Temperatura kaloryferow
     Tr2 = models.IntegerField(default = 0)   # Temperatura budynku
+    #----------------------------------------------------
+    #budynek nr 3
+    Th3 = models.IntegerField(default = 0)   # Temperatura kaloryferow
+    Tr3 = models.IntegerField(default = 0)   # Temperatura budynku
     
     To = models.IntegerField(default = 0)   # Temperatura na zewnatrz
     date = models.DateTimeField('data pomiaru',default = datetime.now())

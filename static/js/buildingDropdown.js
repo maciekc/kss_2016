@@ -46,3 +46,16 @@ function buildingTwo() {
         Plotly.redraw(buildingChartDiv);
     }
 }
+
+function buildingThree() {
+    if(buildingNo != '3') {
+        buildingNo = '3';
+        d3.json('/wizualizacja/'+buildingNo+'/'+timeUnit+'/', function(SQLdata) {
+            buildingChartDiv.data[0].x = SQLdata.date;
+            buildingChartDiv.data[1].x = SQLdata.date;
+            buildingChartDiv.data[0].y = SQLdata.Tr;
+            buildingChartDiv.data[1].y = SQLdata.Th;
+        });
+        Plotly.redraw(buildingChartDiv);
+    }
+}
