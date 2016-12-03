@@ -5,8 +5,6 @@
 
 var generateAllCharts = function () {
     d3.json('/wizualizacja/wiz/'+buildingNo+'/'+timeUnit+'/', function(SQLdata) {
-        // var SQLdata = JSON.parse('{{ SQLdata|escapejs }}');
-        console.log(SQLdata);
         mainChartDiv.data[0].x = SQLdata.date;
         mainChartDiv.data[1].x = SQLdata.date;
         mainChartDiv.data[2].x = SQLdata.date;
@@ -21,7 +19,9 @@ var generateAllCharts = function () {
         mainChartDiv.data[3].y = SQLdata.Tpco;
         streamChartDiv.data[0].y = SQLdata.Fzm;
         buildingChartDiv.data[0].y = SQLdata.Tr;
+        buildingChartDiv.data[0].name = 'Tr'+buildingNo;
         buildingChartDiv.data[1].y = SQLdata.Th;
+        buildingChartDiv.data[1].name = 'Th'+buildingNo;
         outsideChartDiv.data[0].y = SQLdata.To;
         numData.Tzm = SQLdata.Tzm[SQLdata.Tzm.length-1];
         numData.Tp = SQLdata.Tpm[SQLdata.Tpm.length-1];

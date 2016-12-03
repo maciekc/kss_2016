@@ -16,6 +16,8 @@ var changeLeds = function () {
                         'led','led'];
 
     var checkIndicatorStatus = function () {
+        if(timeUnit=='day')
+
         if(numData.Tzm > 1.1*(70-2.5*(numData.To-6)))
             indicators[4] = 'led led-red-on';
         else if(numData.Tzm < 0.9*(70-2.5*(numData.To-6)))

@@ -6,9 +6,8 @@ django.setup()
 
 from wizualizacja.models import Measurement
 
-def delate_all_in_DB():
-    
+def delete_all_in_DB():
     Measurement.objects.all().delete()
 
-delate_all_in_DB()
+delete_all_in_DB()
     

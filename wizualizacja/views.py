@@ -64,11 +64,11 @@ def update_data(request, buildingNo, timeUnit):
             size = len(dataTemp)
 
             if timeUnit =='day':
-                divider = 100
+                divider = 96
             elif timeUnit == 'week':
-                divider = 700
+                divider = 672
             elif timeUnit == 'month':
-                divider = 3000
+                divider = 2880
 
             data = []
             for i in range(0,divider,size-1):

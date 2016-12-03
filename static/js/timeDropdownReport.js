@@ -6,23 +6,6 @@
 //var Tr1;
 //var Th1;
 
-//$(function () {
-//	
-//	$('#but_r').on('click', function(){
-//		
-//		$.ajax({
-//			type: 'GET',
-//			url: "wizualizacja/raport/",
-//			data: {
-//				okres: 'tydzien',
-////				$(#okres).val(),
-//			}	
-//		});
-//		
-//	});
-//		  //your code here
-//
-//});
 'use strict';
 
 function openTimeDropdownReport() {

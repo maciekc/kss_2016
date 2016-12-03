@@ -13,24 +13,16 @@ var buildingChartDiv = buildingDivAppend.node();
 var generateBuildingChart = function() {
 
     var interiorTemp = {
-        //x: ['2013-10-04 22:23:00', '2013-11-04 22:23:00', '2013-12-04 22:23:00'],
-        //y: [1, 3, 0],
-        // x:date,
-        // y:Tr1,
         x: [],
         y: [],
-        name: 'Tr',     //Temperatura budynku
+        name: 'Tr1',     //Temperatura budynku
         mode: 'lines'
     };
 
     var heatingTemp = {
-        //x: ['2013-10-04 22:23:00', '2013-11-04 22:23:00', '2013-12-04 22:23:00'],
-        //y: [4, 2, 9],
-        // x:date,
-        // y:Th1,
         x: [],
         y: [],
-        name: 'Th',     //Temperatura kaloryferów
+        name: 'Th1',     //Temperatura kaloryferów
         mode: 'lines'
     };
 
