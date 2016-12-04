@@ -122,7 +122,7 @@ def generate_PDF(request, timeUnit):
                 tm = 7*2880
             elif timeUnit == 'month':
                 tm = 30*2880
-            new_date = date_last - time
+            new_date = date_last - tm
             data = Measurement.objects.filter(date__range = (new_date,date_last))
 
         size = len(data)
