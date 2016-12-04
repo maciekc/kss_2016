@@ -5,6 +5,7 @@
 
 var generateAllCharts = function () {
     d3.json('/wizualizacja/wiz/'+buildingNo+'/'+timeUnit+'/', function(SQLdata) {
+        toWithDelay = SQLdata.ToWithDelay[0];
         mainChartDiv.data[0].x = SQLdata.date;
         mainChartDiv.data[1].x = SQLdata.date;
         mainChartDiv.data[2].x = SQLdata.date;

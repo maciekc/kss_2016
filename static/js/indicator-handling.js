@@ -16,19 +16,18 @@ var changeLeds = function () {
                         'led','led'];
 
     var checkIndicatorStatus = function () {
-        if(timeUnit=='day')
 
-        if(numData.Tzm > 1.1*(70-2.5*(numData.To-6)))
+        if(numData.Tzm > 1.1*(70-(2.5*(toWithDelay-6))))
             indicators[4] = 'led led-red-on';
-        else if(numData.Tzm < 0.9*(70-2.5*(numData.To-6)))
+        else if(numData.Tzm < 0.9*(70-(2.5*(toWithDelay-6))))
             indicators[5] = 'led led-blue-on';
-        if(numData.Tzco > 1.1*(55-1.75*numData.To))
+        if(numData.Tzco > 1.1*(55 - (1.75 * numData.To)))
             indicators[6] = 'led led-red-on';
-        else if(numData.Tzco < 0.9*(55-1.75*numData.To))
+        else if(numData.Tzco < 0.9*(55 - (1.75 * numData.To)))
             indicators[7] = 'led led-blue-on';
-        if(numData.Th > 1.1*(55-1.75*numData.To))
+        if(numData.Th > 1.1*(55 - (1.75 * numData.To)))
             indicators[8] = 'led led-red-on';
-        else if(numData.Th < 0.9*(55-1.75*numData.To))
+        else if(numData.Th < 0.9*(55 - (1.75 * numData.To)))
             indicators[9] = 'led led-blue-on';
     };
 

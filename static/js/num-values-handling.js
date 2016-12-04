@@ -9,15 +9,16 @@ var timeUnit = 'day';
 var timeUnitR = 'day';
 var buildingNo = '1';
 var numData = {
-        Tzm: 0,
-        Tpm: 0,
-        Tzco: 0,
-        Tpco: 0,
         Fzm: 0,
+        To: 0,
+        Tzm: 0,
+        Tzco: 0,
         Th: 0,
         Tr: 0,
-        To: 0,
+        Tpco: 0,
+        Tpm: 0,
 };
+var toWithDelay = 0;
 
 var changeNumValues = function() {
         d3.selectAll('.numval').data(Object.values(numData)).html(String);

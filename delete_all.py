@@ -10,4 +10,3 @@ def delete_all_in_DB():
     Measurement.objects.all().delete()
 
 delete_all_in_DB()
-    
