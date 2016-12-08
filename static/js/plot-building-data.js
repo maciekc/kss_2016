@@ -27,7 +27,7 @@ var generateBuildingChart = function() {
     };
 
     var buildingLayout = {
-        title: 'Temperatury w budynku x',
+        title: 'Temperatury w budynku 1',
         legend: {
             x: 1,
             y: 1

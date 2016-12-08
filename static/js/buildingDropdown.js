@@ -24,38 +24,40 @@ window.onclick = function (event) {
 function buildingOne() {
     if(buildingNo != '1') {
         buildingNo = '1';
-        d3.json('/wizualizacja/'+buildingNo+'/'+timeUnit+'/', function(SQLdata) {
-            buildingChartDiv.data[0].x = SQLdata.date;
-            buildingChartDiv.data[1].x = SQLdata.date;
-            buildingChartDiv.data[0].y = SQLdata.Tr;
-            buildingChartDiv.data[1].y = SQLdata.Th;
-        });
-        Plotly.redraw(buildingChartDiv);
+        // d3.json('/wizualizacja/'+buildingNo+'/'+timeUnit+'/', function(SQLdata) {
+        //     buildingChartDiv.data[0].x = SQLdata.date;
+        //     buildingChartDiv.data[1].x = SQLdata.date;
+        //     buildingChartDiv.data[0].y = SQLdata.Tr;
+        //     buildingChartDiv.data[1].y = SQLdata.Th;
+        // });
+        // Plotly.redraw(buildingChartDiv);
     }
 }
 
 function buildingTwo() {
     if(buildingNo != '2') {
         buildingNo = '2';
-        d3.json('/wizualizacja/'+buildingNo+'/'+timeUnit+'/', function(SQLdata) {
-            buildingChartDiv.data[0].x = SQLdata.date;
-            buildingChartDiv.data[1].x = SQLdata.date;
-            buildingChartDiv.data[0].y = SQLdata.Tr;
-            buildingChartDiv.data[1].y = SQLdata.Th;
-        });
-        Plotly.redraw(buildingChartDiv);
+        // buildingChartDiv.layout.title = 'Temperatury w budynku ' + buildingNo;
+        // d3.json('/wizualizacja/'+buildingNo+'/'+timeUnit+'/', function(SQLdata) {
+        //     buildingChartDiv.data[0].x = SQLdata.date;
+        //     buildingChartDiv.data[1].x = SQLdata.date;
+        //     buildingChartDiv.data[0].y = SQLdata.Tr;
+        //     buildingChartDiv.data[1].y = SQLdata.Th;
+        // });
+        // Plotly.redraw(buildingChartDiv);
     }
 }
 
 function buildingThree() {
     if(buildingNo != '3') {
         buildingNo = '3';
-        d3.json('/wizualizacja/'+buildingNo+'/'+timeUnit+'/', function(SQLdata) {
-            buildingChartDiv.data[0].x = SQLdata.date;
-            buildingChartDiv.data[1].x = SQLdata.date;
-            buildingChartDiv.data[0].y = SQLdata.Tr;
-            buildingChartDiv.data[1].y = SQLdata.Th;
-        });
-        Plotly.redraw(buildingChartDiv);
+        // buildingChartDiv.layout.title = 'Temperatury w budynku ' + buildingNo;
+        // d3.json('/wizualizacja/'+buildingNo+'/'+timeUnit+'/', function(SQLdata) {
+        //     buildingChartDiv.data[0].x = SQLdata.date;
+        //     buildingChartDiv.data[1].x = SQLdata.date;
+        //     buildingChartDiv.data[0].y = SQLdata.Tr;
+        //     buildingChartDiv.data[1].y = SQLdata.Th;
+        // });
+        // Plotly.redraw(buildingChartDiv);
     }
 }

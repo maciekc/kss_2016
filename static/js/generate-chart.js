@@ -25,13 +25,14 @@ var generateAllCharts = function () {
         buildingChartDiv.data[1].name = 'Th'+buildingNo;
         outsideChartDiv.data[0].y = SQLdata.To;
         numData.Tzm = SQLdata.Tzm[SQLdata.Tzm.length-1];
-        numData.Tp = SQLdata.Tpm[SQLdata.Tpm.length-1];
+        numData.Tpm = SQLdata.Tpm[SQLdata.Tpm.length-1];
         numData.Tzco = SQLdata.Tzco[SQLdata.Tzco.length-1];
         numData.Tpco = SQLdata.Tpco[SQLdata.Tpco.length-1];
         numData.Fzm = SQLdata.Fzm[SQLdata.Fzm.length-1];
         numData.Th = SQLdata.Th[SQLdata.Th.length-1];
         numData.Tr = SQLdata.Tr[SQLdata.Tr.length-1];
         numData.To = SQLdata.To[SQLdata.To.length-1];
+        buildingChartDiv.layout.title = 'Temperatury w budynku ' + buildingNo;
         Plotly.redraw(mainChartDiv);
         Plotly.redraw(streamChartDiv);
         Plotly.redraw(buildingChartDiv);
